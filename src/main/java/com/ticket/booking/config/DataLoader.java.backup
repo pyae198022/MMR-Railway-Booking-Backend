@@ -1,0 +1,231 @@
+package com.ticket.booking.config;
+
+import com.ticket.booking.model.Station;
+import com.ticket.booking.model.Train;
+import com.ticket.booking.model.User;
+import com.ticket.booking.repository.StationRepository;
+import com.ticket.booking.repository.TrainRepository;
+import com.ticket.booking.repository.UserRepository;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import java.time.LocalDateTime;
+
+@Configuration
+public class DataLoader {
+    
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+    
+    @Bean
+    @Order(1)
+    public CommandLineRunner loadData(
+            StationRepository stationRepository,
+            TrainRepository trainRepository,
+            UserRepository userRepository) {
+        return args -> {
+            PasswordEncoder passwordEncoder = passwordEncoder();
+            // Create Myanmar railway stations based on official Myanmar Railways
+            // Major stations from official Myanmar Railways network
+            
+            Station yangon = new Station(null, "YGN", "Yangon Central Railway Station", "Yangon", "Yangon Region", "8", "Ticket Counter, Waiting Room, Food Stalls, Restrooms");
+            Station mandalay = new Station(null, "MDY", "Mandalay Central Railway Station", "Mandalay", "Mandalay Region", "6", "Ticket Office, Waiting Area, Snack Shops");
+            Station naypyidaw = new Station(null, "NPY", "Naypyidaw Railway Station", "Naypyidaw", "Naypyidaw Union Territory", "4", "Government Station, Basic Facilities");
+            Station bawlake = new Station(null, "BWL", "Bawlake Station", "Bawlake", "Kayah State", "2", "Basic Station, Ticket Counter");
+            Station mawlamyine = new Station(null, "MLM", "Mawlamyine Station", "Mawlamyine", "Mon State", "3", "Coastal Station, Waiting Area");
+            Station taunggyi = new Station(null, "TGI", "Taunggyi Station", "Taunggyi", "Shan State", "3", "Hill Station, Basic Amenities");
+            Station pyinoolwin = new Station(null, "PYO", "Pyinoolwin Station", "Pyinoolwin", "Mandalay Region", "2", "Hill Station, Scenic Views");
+            Station bagan = new Station(null, "BGN", "Bagan Station", "Bagan", "Mandalay Region", "2", "Tourist Station, Temple Views");
+            Station kalaw = new Station(null, "KLW", "Kalaw Station", "Kalaw", "Shan State", "2", "Hill Station, Cool Climate");
+            Station thazi = new Station(null, "THZ", "Thazi Junction", "Thazi", "Mandalay Region", "3", "Junction Station, Transfer Point");
+            
+            stationRepository.save(yangon);
+            stationRepository.save(mandalay);
+            stationRepository.save(naypyidaw);
+            stationRepository.save(bawlake);
+            stationRepository.save(mawlamyine);
+            stationRepository.save(taunggyi);
+            stationRepository.save(pyinoolwin);
+            stationRepository.save(bagan);
+            stationRepository.save(kalaw);
+            stationRepository.save(thazi);
+            
+            // Create Myanmar trains based on official Myanmar Railways services
+            // Using realistic Myanmar train names and numbers
+            
+            // Yangon to Mandalay Express
+            Train train1 = new Train();
+            train1.setTrainNumber("UP01");
+            train1.setTrainName("Yangon-Mandalay Express");
+            train1.setSourceStation(yangon);
+            train1.setDestinationStation(mandalay);
+            train1.setDepartureTime(LocalDateTime.now().plusDays(1).withHour(8).withMinute(0));
+            train1.setArrivalTime(LocalDateTime.now().plusDays(1).withHour(18).withMinute(30));
+            train1.setTotalSeats(120);
+            train1.setAvailableSeats(95);
+            train1.setBasePrice(15000.0); // Myanmar Kyat
+            train1.setTrainType("Express");
+            train1.setStatus("ACTIVE");
+            
+            // Mandalay to Yangon Express
+            Train train2 = new Train();
+            train2.setTrainNumber("DN01");
+            train2.setTrainName("Mandalay-Yangon Express");
+            train2.setSourceStation(mandalay);
+            train2.setDestinationStation(yangon);
+            train2.setDepartureTime(LocalDateTime.now().plusDays(1).withHour(7).withMinute(30));
+            train2.setArrivalTime(LocalDateTime.now().plusDays(1).withHour(18).withMinute(0));
+            train2.setTotalSeats(120);
+            train2.setAvailableSeats(88);
+            train2.setBasePrice(15000.0);
+            train2.setTrainType("Express");
+            train2.setStatus("ACTIVE");
+            
+            // Yangon to Naypyidaw Special
+            Train train3 = new Train();
+            train3.setTrainNumber("UP02");
+            train3.setTrainName("Yangon-Naypyidaw Special");
+            train3.setSourceStation(yangon);
+            train3.setDestinationStation(naypyidaw);
+            train3.setDepartureTime(LocalDateTime.now().plusDays(1).withHour(6).withMinute(30));
+            train3.setArrivalTime(LocalDateTime.now().plusDays(1).withHour(12).withMinute(0));
+            train3.setTotalSeats(100);
+            train3.setAvailableSeats(65);
+            train3.setBasePrice(8000.0);
+            train3.setTrainType("Special");
+            train3.setStatus("ACTIVE");
+            
+            // Bagan Express (Mandalay to Bagan)
+            Train train4 = new Train();
+            train4.setTrainNumber("UP03");
+            train4.setTrainName("Bagan Express");
+            train4.setSourceStation(mandalay);
+            train4.setDestinationStation(bagan);
+            train4.setDepartureTime(LocalDateTime.now().plusDays(1).withHour(9).withMinute(0));
+            train4.setArrivalTime(LocalDateTime.now().plusDays(1).withHour(13).withMinute(30));
+            train4.setTotalSeats(80);
+            train4.setAvailableSeats(42);
+            train4.setBasePrice(6000.0);
+            train4.setTrainType("Express");
+            train4.setStatus("ACTIVE");
+            
+            // Shan State Special (Mandalay to Taunggyi)
+            Train train5 = new Train();
+            train5.setTrainNumber("UP04");
+            train5.setTrainName("Shan State Special");
+            train5.setSourceStation(mandalay);
+            train5.setDestinationStation(taunggyi);
+            train5.setDepartureTime(LocalDateTime.now().plusDays(1).withHour(10).withMinute(0));
+            train5.setArrivalTime(LocalDateTime.now().plusDays(1).withHour(17).withMinute(30));
+            train5.setTotalSeats(90);
+            train5.setAvailableSeats(58);
+            train5.setBasePrice(12000.0);
+            train5.setTrainType("Special");
+            train5.setStatus("ACTIVE");
+            
+            // Coastal Line (Yangon to Mawlamyine)
+            Train train6 = new Train();
+            train6.setTrainNumber("UP05");
+            train6.setTrainName("Coastal Line");
+            train6.setSourceStation(yangon);
+            train6.setDestinationStation(mawlamyine);
+            train6.setDepartureTime(LocalDateTime.now().plusDays(1).withHour(7).withMinute(0));
+            train6.setArrivalTime(LocalDateTime.now().plusDays(1).withHour(14).withMinute(30));
+            train6.setTotalSeats(110);
+            train6.setAvailableSeats(72);
+            train6.setBasePrice(10000.0);
+            train6.setTrainType("Ordinary");
+            train6.setStatus("ACTIVE");
+            
+            // Hill Station Special (Thazi to Kalaw)
+            Train train7 = new Train();
+            train7.setTrainNumber("UP06");
+            train7.setTrainName("Hill Station Special");
+            train7.setSourceStation(thazi);
+            train7.setDestinationStation(kalaw);
+            train7.setDepartureTime(LocalDateTime.now().plusDays(1).withHour(8).withMinute(30));
+            train7.setArrivalTime(LocalDateTime.now().plusDays(1).withHour(12).withMinute(0));
+            train7.setTotalSeats(70);
+            train7.setAvailableSeats(35);
+            train7.setBasePrice(5000.0);
+            train7.setTrainType("Special");
+            train7.setStatus("ACTIVE");
+            
+            // Kayah State Line (Thazi to Bawlake)
+            Train train8 = new Train();
+            train8.setTrainNumber("UP07");
+            train8.setTrainName("Kayah State Line");
+            train8.setSourceStation(thazi);
+            train8.setDestinationStation(bawlake);
+            train8.setDepartureTime(LocalDateTime.now().plusDays(1).withHour(9).withMinute(30));
+            train8.setArrivalTime(LocalDateTime.now().plusDays(1).withHour(15).withMinute(0));
+            train8.setTotalSeats(60);
+            train8.setAvailableSeats(28);
+            train8.setBasePrice(7000.0);
+            train8.setTrainType("Ordinary");
+            train8.setStatus("ACTIVE");
+            
+            trainRepository.save(train1);
+            trainRepository.save(train2);
+            trainRepository.save(train3);
+            trainRepository.save(train4);
+            trainRepository.save(train5);
+            trainRepository.save(train6);
+            trainRepository.save(train7);
+            trainRepository.save(train8);
+            
+            // Create Myanmar users with local names
+            User admin = new User();
+            admin.setEmail("admin@myanmarrailways.com");
+            admin.setPassword(passwordEncoder.encode("admin123"));
+            admin.setFirstName("Aung");
+            admin.setLastName("Kyaw");
+            admin.setPhoneNumber("09123456789");
+            admin.setRole("ADMIN");
+            
+            User customer1 = new User();
+            customer1.setEmail("minthu@example.com");
+            customer1.setPassword(passwordEncoder.encode("password123"));
+            customer1.setFirstName("Min");
+            customer1.setLastName("Thu");
+            customer1.setPhoneNumber("09234567890");
+            customer1.setRole("USER");
+            
+            User customer2 = new User();
+            customer2.setEmail("khinzwe@example.com");
+            customer2.setPassword(passwordEncoder.encode("password123"));
+            customer2.setFirstName("Khin");
+            customer2.setLastName("Zwe");
+            customer2.setPhoneNumber("09345678901");
+            customer2.setRole("USER");
+            
+            User customer3 = new User();
+            customer3.setEmail("myatnoe@example.com");
+            customer3.setPassword(passwordEncoder.encode("password123"));
+            customer3.setFirstName("Myat");
+            customer3.setLastName("Noe");
+            customer3.setPhoneNumber("09456789012");
+            customer3.setRole("USER");
+            
+            userRepository.save(admin);
+            userRepository.save(customer1);
+            userRepository.save(customer2);
+            userRepository.save(customer3);
+            
+            System.out.println("Myanmar Railways sample data loaded successfully!");
+            System.out.println("Stations: Yangon, Mandalay, Naypyidaw, Bagan, Taunggyi, Mawlamyine, etc.");
+            System.out.println("Trains: Yangon-Mandalay Express, Bagan Express, Shan State Special, etc.");
+            System.out.println("Users: Local Myanmar names with +95 phone numbers");
+        };
+    }
+    
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder();
+    }
+}

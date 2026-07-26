@@ -1,0 +1,512 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------< com.ticket.booking:MMR_Railway_Booking_Backend >-----------
+[INFO] Building MMR_Railway_Booking_Backend 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.4.3:run (default-cli) > test-compile @ MMR_Railway_Booking_Backend >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ MMR_Railway_Booking_Backend ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ MMR_Railway_Booking_Backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ MMR_Railway_Booking_Backend ---
+[INFO] skip non existing resourceDirectory /Users/pyaesone/Projects/MMR_Railway_Booking_Backend/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ MMR_Railway_Booking_Backend ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 1 source file with javac [debug parameters release 17] to target/test-classes
+[INFO] 
+[INFO] <<< spring-boot:3.4.3:run (default-cli) < test-compile @ MMR_Railway_Booking_Backend <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.4.3:run (default-cli) @ MMR_Railway_Booking_Backend ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.3)
+
+2026-07-26T11:51:46.558+06:30  INFO 6399 --- [Myanmar_Railway_Booking_Backend] [           main] .t.b.MmrRailwayBookingBackendApplication : Starting MmrRailwayBookingBackendApplication using Java 21.0.2 with PID 6399 (/Users/pyaesone/Projects/MMR_Railway_Booking_Backend/target/classes started by pyaesone in /Users/pyaesone/Projects/MMR_Railway_Booking_Backend)
+2026-07-26T11:51:46.559+06:30 DEBUG 6399 --- [Myanmar_Railway_Booking_Backend] [           main] .t.b.MmrRailwayBookingBackendApplication : Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-07-26T11:51:46.559+06:30  INFO 6399 --- [Myanmar_Railway_Booking_Backend] [           main] .t.b.MmrRailwayBookingBackendApplication : No active profile set, falling back to 1 default profile: "default"
+2026-07-26T11:51:46.875+06:30  INFO 6399 --- [Myanmar_Railway_Booking_Backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-26T11:51:46.906+06:30  INFO 6399 --- [Myanmar_Railway_Booking_Backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 6 JPA repository interfaces.
+2026-07-26T11:51:47.167+06:30  INFO 6399 --- [Myanmar_Railway_Booking_Backend] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-07-26T11:51:47.176+06:30  INFO 6399 --- [Myanmar_Railway_Booking_Backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-26T11:51:47.176+06:30  INFO 6399 --- [Myanmar_Railway_Booking_Backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2026-07-26T11:51:47.214+06:30  INFO 6399 --- [Myanmar_Railway_Booking_Backend] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-07-26T11:51:47.214+06:30  INFO 6399 --- [Myanmar_Railway_Booking_Backend] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 637 ms
+2026-07-26T11:51:47.297+06:30  INFO 6399 --- [Myanmar_Railway_Booking_Backend] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-07-26T11:51:47.329+06:30  INFO 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2026-07-26T11:51:47.344+06:30  INFO 6399 --- [Myanmar_Railway_Booking_Backend] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-07-26T11:51:47.467+06:30  INFO 6399 --- [Myanmar_Railway_Booking_Backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-26T11:51:47.481+06:30  INFO 6399 --- [Myanmar_Railway_Booking_Backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-07-26T11:51:47.572+06:30  INFO 6399 --- [Myanmar_Railway_Booking_Backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:mmr_railway_booking user=SA
+2026-07-26T11:51:47.573+06:30  INFO 6399 --- [Myanmar_Railway_Booking_Backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-07-26T11:51:47.586+06:30  WARN 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-07-26T11:51:47.594+06:30  INFO 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-26T11:51:48.091+06:30  INFO 6399 --- [Myanmar_Railway_Booking_Backend] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-26T11:51:48.114+06:30 DEBUG 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.SQL                        : 
+    create table bookings (
+        id bigint generated by default as identity,
+        booking_date timestamp(6) not null,
+        booking_status varchar(255) not null,
+        grand_total float(53) not null,
+        journey_date timestamp(6) not null,
+        number_of_passengers integer not null,
+        payment_status varchar(255) not null,
+        pnr_number varchar(255) not null,
+        tax_amount float(53) not null,
+        total_fare float(53) not null,
+        destination_station_id bigint not null,
+        source_station_id bigint not null,
+        train_id bigint not null,
+        user_id bigint not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table bookings (
+        id bigint generated by default as identity,
+        booking_date timestamp(6) not null,
+        booking_status varchar(255) not null,
+        grand_total float(53) not null,
+        journey_date timestamp(6) not null,
+        number_of_passengers integer not null,
+        payment_status varchar(255) not null,
+        pnr_number varchar(255) not null,
+        tax_amount float(53) not null,
+        total_fare float(53) not null,
+        destination_station_id bigint not null,
+        source_station_id bigint not null,
+        train_id bigint not null,
+        user_id bigint not null,
+        primary key (id)
+    )
+2026-07-26T11:51:48.119+06:30 DEBUG 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.SQL                        : 
+    create table passengers (
+        id bigint generated by default as identity,
+        age integer not null,
+        berth_preference varchar(255) not null,
+        date_of_birth date not null,
+        fare float(53) not null,
+        first_name varchar(255) not null,
+        gender varchar(255) not null,
+        id_number varchar(255) not null,
+        id_type varchar(255) not null,
+        last_name varchar(255) not null,
+        status varchar(255) not null,
+        booking_id bigint not null,
+        seat_id bigint,
+        primary key (id)
+    )
+Hibernate: 
+    create table passengers (
+        id bigint generated by default as identity,
+        age integer not null,
+        berth_preference varchar(255) not null,
+        date_of_birth date not null,
+        fare float(53) not null,
+        first_name varchar(255) not null,
+        gender varchar(255) not null,
+        id_number varchar(255) not null,
+        id_type varchar(255) not null,
+        last_name varchar(255) not null,
+        status varchar(255) not null,
+        booking_id bigint not null,
+        seat_id bigint,
+        primary key (id)
+    )
+2026-07-26T11:51:48.120+06:30 DEBUG 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.SQL                        : 
+    create table payments (
+        id bigint generated by default as identity,
+        amount float(53) not null,
+        bank_name varchar(255),
+        card_last_four varchar(255),
+        payment_date timestamp(6) not null,
+        payment_method varchar(255) not null,
+        payment_response TEXT,
+        payment_status varchar(255) not null,
+        transaction_id varchar(255) not null,
+        upi_id varchar(255),
+        booking_id bigint not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table payments (
+        id bigint generated by default as identity,
+        amount float(53) not null,
+        bank_name varchar(255),
+        card_last_four varchar(255),
+        payment_date timestamp(6) not null,
+        payment_method varchar(255) not null,
+        payment_response TEXT,
+        payment_status varchar(255) not null,
+        transaction_id varchar(255) not null,
+        upi_id varchar(255),
+        booking_id bigint not null,
+        primary key (id)
+    )
+2026-07-26T11:51:48.120+06:30 DEBUG 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.SQL                        : 
+    create table seats (
+        id bigint generated by default as identity,
+        coach_type varchar(255) not null,
+        is_available boolean not null,
+        price_multiplier float(53) not null,
+        seat_number varchar(255) not null,
+        seat_type varchar(255) not null,
+        status varchar(255) not null,
+        train_id bigint not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table seats (
+        id bigint generated by default as identity,
+        coach_type varchar(255) not null,
+        is_available boolean not null,
+        price_multiplier float(53) not null,
+        seat_number varchar(255) not null,
+        seat_type varchar(255) not null,
+        status varchar(255) not null,
+        train_id bigint not null,
+        primary key (id)
+    )
+2026-07-26T11:51:48.121+06:30 DEBUG 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.SQL                        : 
+    create table stations (
+        id bigint generated by default as identity,
+        city varchar(255) not null,
+        code varchar(255) not null,
+        facilities TEXT,
+        name varchar(255) not null,
+        platform_count varchar(255),
+        state varchar(255) not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table stations (
+        id bigint generated by default as identity,
+        city varchar(255) not null,
+        code varchar(255) not null,
+        facilities TEXT,
+        name varchar(255) not null,
+        platform_count varchar(255),
+        state varchar(255) not null,
+        primary key (id)
+    )
+2026-07-26T11:51:48.121+06:30 DEBUG 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.SQL                        : 
+    create table trains (
+        id bigint generated by default as identity,
+        arrival_time timestamp(6) not null,
+        available_seats integer not null,
+        base_price float(53) not null,
+        departure_time timestamp(6) not null,
+        status varchar(255) not null,
+        total_seats integer not null,
+        train_name varchar(255) not null,
+        train_number varchar(255) not null,
+        train_type varchar(255) not null,
+        destination_station_id bigint not null,
+        source_station_id bigint not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table trains (
+        id bigint generated by default as identity,
+        arrival_time timestamp(6) not null,
+        available_seats integer not null,
+        base_price float(53) not null,
+        departure_time timestamp(6) not null,
+        status varchar(255) not null,
+        total_seats integer not null,
+        train_name varchar(255) not null,
+        train_number varchar(255) not null,
+        train_type varchar(255) not null,
+        destination_station_id bigint not null,
+        source_station_id bigint not null,
+        primary key (id)
+    )
+2026-07-26T11:51:48.122+06:30 DEBUG 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.SQL                        : 
+    create table users (
+        id bigint generated by default as identity,
+        created_at timestamp(6) not null,
+        email varchar(255) not null,
+        first_name varchar(255) not null,
+        is_active boolean not null,
+        last_login timestamp(6),
+        last_name varchar(255) not null,
+        password varchar(255) not null,
+        phone_number varchar(255) not null,
+        role varchar(255) not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table users (
+        id bigint generated by default as identity,
+        created_at timestamp(6) not null,
+        email varchar(255) not null,
+        first_name varchar(255) not null,
+        is_active boolean not null,
+        last_login timestamp(6),
+        last_name varchar(255) not null,
+        password varchar(255) not null,
+        phone_number varchar(255) not null,
+        role varchar(255) not null,
+        primary key (id)
+    )
+2026-07-26T11:51:48.123+06:30 DEBUG 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.SQL                        : 
+    alter table if exists bookings 
+       drop constraint if exists UK9qtneyjsutf7s9e7a7usyabhg
+Hibernate: 
+    alter table if exists bookings 
+       drop constraint if exists UK9qtneyjsutf7s9e7a7usyabhg
+2026-07-26T11:51:48.123+06:30 DEBUG 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.SQL                        : 
+    alter table if exists bookings 
+       add constraint UK9qtneyjsutf7s9e7a7usyabhg unique (pnr_number)
+Hibernate: 
+    alter table if exists bookings 
+       add constraint UK9qtneyjsutf7s9e7a7usyabhg unique (pnr_number)
+2026-07-26T11:51:48.124+06:30 DEBUG 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.SQL                        : 
+    alter table if exists passengers 
+       drop constraint if exists UKnjyquhfa2vq87ks2w6dp9vok2
+Hibernate: 
+    alter table if exists passengers 
+       drop constraint if exists UKnjyquhfa2vq87ks2w6dp9vok2
+2026-07-26T11:51:48.124+06:30 DEBUG 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.SQL                        : 
+    alter table if exists passengers 
+       add constraint UKnjyquhfa2vq87ks2w6dp9vok2 unique (seat_id)
+Hibernate: 
+    alter table if exists passengers 
+       add constraint UKnjyquhfa2vq87ks2w6dp9vok2 unique (seat_id)
+2026-07-26T11:51:48.124+06:30 DEBUG 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.SQL                        : 
+    alter table if exists payments 
+       drop constraint if exists UKlryndveuwa4k5qthti0pkmtlx
+Hibernate: 
+    alter table if exists payments 
+       drop constraint if exists UKlryndveuwa4k5qthti0pkmtlx
+2026-07-26T11:51:48.124+06:30 DEBUG 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.SQL                        : 
+    alter table if exists payments 
+       add constraint UKlryndveuwa4k5qthti0pkmtlx unique (transaction_id)
+Hibernate: 
+    alter table if exists payments 
+       add constraint UKlryndveuwa4k5qthti0pkmtlx unique (transaction_id)
+2026-07-26T11:51:48.125+06:30 DEBUG 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.SQL                        : 
+    alter table if exists payments 
+       drop constraint if exists UKnuscjm6x127hkb15kcb8n56wo
+Hibernate: 
+    alter table if exists payments 
+       drop constraint if exists UKnuscjm6x127hkb15kcb8n56wo
+2026-07-26T11:51:48.125+06:30 DEBUG 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.SQL                        : 
+    alter table if exists payments 
+       add constraint UKnuscjm6x127hkb15kcb8n56wo unique (booking_id)
+Hibernate: 
+    alter table if exists payments 
+       add constraint UKnuscjm6x127hkb15kcb8n56wo unique (booking_id)
+2026-07-26T11:51:48.125+06:30 DEBUG 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.SQL                        : 
+    alter table if exists stations 
+       drop constraint if exists UKa5jb873kqd0gpggavx5n5l2gd
+Hibernate: 
+    alter table if exists stations 
+       drop constraint if exists UKa5jb873kqd0gpggavx5n5l2gd
+2026-07-26T11:51:48.125+06:30 DEBUG 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.SQL                        : 
+    alter table if exists stations 
+       add constraint UKa5jb873kqd0gpggavx5n5l2gd unique (code)
+Hibernate: 
+    alter table if exists stations 
+       add constraint UKa5jb873kqd0gpggavx5n5l2gd unique (code)
+2026-07-26T11:51:48.125+06:30 DEBUG 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.SQL                        : 
+    alter table if exists trains 
+       drop constraint if exists UKdlkwl1181821gq3pp6drxnuej
+Hibernate: 
+    alter table if exists trains 
+       drop constraint if exists UKdlkwl1181821gq3pp6drxnuej
+2026-07-26T11:51:48.125+06:30 DEBUG 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.SQL                        : 
+    alter table if exists trains 
+       add constraint UKdlkwl1181821gq3pp6drxnuej unique (train_number)
+Hibernate: 
+    alter table if exists trains 
+       add constraint UKdlkwl1181821gq3pp6drxnuej unique (train_number)
+2026-07-26T11:51:48.126+06:30 DEBUG 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.SQL                        : 
+    alter table if exists users 
+       drop constraint if exists UK6dotkott2kjsp8vw4d0m25fb7
+Hibernate: 
+    alter table if exists users 
+       drop constraint if exists UK6dotkott2kjsp8vw4d0m25fb7
+2026-07-26T11:51:48.126+06:30 DEBUG 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.SQL                        : 
+    alter table if exists users 
+       add constraint UK6dotkott2kjsp8vw4d0m25fb7 unique (email)
+Hibernate: 
+    alter table if exists users 
+       add constraint UK6dotkott2kjsp8vw4d0m25fb7 unique (email)
+2026-07-26T11:51:48.126+06:30 DEBUG 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.SQL                        : 
+    alter table if exists users 
+       drop constraint if exists UK9q63snka3mdh91as4io72espi
+Hibernate: 
+    alter table if exists users 
+       drop constraint if exists UK9q63snka3mdh91as4io72espi
+2026-07-26T11:51:48.126+06:30 DEBUG 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.SQL                        : 
+    alter table if exists users 
+       add constraint UK9q63snka3mdh91as4io72espi unique (phone_number)
+Hibernate: 
+    alter table if exists users 
+       add constraint UK9q63snka3mdh91as4io72espi unique (phone_number)
+2026-07-26T11:51:48.127+06:30 DEBUG 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.SQL                        : 
+    alter table if exists bookings 
+       add constraint FKp29v5a33m859jxlp2gbcl92qm 
+       foreign key (destination_station_id) 
+       references stations
+Hibernate: 
+    alter table if exists bookings 
+       add constraint FKp29v5a33m859jxlp2gbcl92qm 
+       foreign key (destination_station_id) 
+       references stations
+2026-07-26T11:51:48.130+06:30 DEBUG 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.SQL                        : 
+    alter table if exists bookings 
+       add constraint FKl5gh71pcprd026iucetr4yqpu 
+       foreign key (source_station_id) 
+       references stations
+Hibernate: 
+    alter table if exists bookings 
+       add constraint FKl5gh71pcprd026iucetr4yqpu 
+       foreign key (source_station_id) 
+       references stations
+2026-07-26T11:51:48.131+06:30 DEBUG 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.SQL                        : 
+    alter table if exists bookings 
+       add constraint FKnvav969din6sdwdejvq0g5a7s 
+       foreign key (train_id) 
+       references trains
+Hibernate: 
+    alter table if exists bookings 
+       add constraint FKnvav969din6sdwdejvq0g5a7s 
+       foreign key (train_id) 
+       references trains
+2026-07-26T11:51:48.132+06:30 DEBUG 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.SQL                        : 
+    alter table if exists bookings 
+       add constraint FKeyog2oic85xg7hsu2je2lx3s6 
+       foreign key (user_id) 
+       references users
+Hibernate: 
+    alter table if exists bookings 
+       add constraint FKeyog2oic85xg7hsu2je2lx3s6 
+       foreign key (user_id) 
+       references users
+2026-07-26T11:51:48.132+06:30 DEBUG 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.SQL                        : 
+    alter table if exists passengers 
+       add constraint FKgc7vcfrut3vamougerwse2m2u 
+       foreign key (booking_id) 
+       references bookings
+Hibernate: 
+    alter table if exists passengers 
+       add constraint FKgc7vcfrut3vamougerwse2m2u 
+       foreign key (booking_id) 
+       references bookings
+2026-07-26T11:51:48.133+06:30 DEBUG 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.SQL                        : 
+    alter table if exists passengers 
+       add constraint FKn2q4p31xfjef3d9bqcbbk26i9 
+       foreign key (seat_id) 
+       references seats
+Hibernate: 
+    alter table if exists passengers 
+       add constraint FKn2q4p31xfjef3d9bqcbbk26i9 
+       foreign key (seat_id) 
+       references seats
+2026-07-26T11:51:48.133+06:30 DEBUG 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.SQL                        : 
+    alter table if exists payments 
+       add constraint FKc52o2b1jkxttngufqp3t7jr3h 
+       foreign key (booking_id) 
+       references bookings
+Hibernate: 
+    alter table if exists payments 
+       add constraint FKc52o2b1jkxttngufqp3t7jr3h 
+       foreign key (booking_id) 
+       references bookings
+2026-07-26T11:51:48.134+06:30 DEBUG 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.SQL                        : 
+    alter table if exists seats 
+       add constraint FKthnax36uccd771sdt7fped2p1 
+       foreign key (train_id) 
+       references trains
+Hibernate: 
+    alter table if exists seats 
+       add constraint FKthnax36uccd771sdt7fped2p1 
+       foreign key (train_id) 
+       references trains
+2026-07-26T11:51:48.135+06:30 DEBUG 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.SQL                        : 
+    alter table if exists trains 
+       add constraint FKblibbuoiigmcn7itc7b9pvq89 
+       foreign key (destination_station_id) 
+       references stations
+Hibernate: 
+    alter table if exists trains 
+       add constraint FKblibbuoiigmcn7itc7b9pvq89 
+       foreign key (destination_station_id) 
+       references stations
+2026-07-26T11:51:48.135+06:30 DEBUG 6399 --- [Myanmar_Railway_Booking_Backend] [           main] org.hibernate.SQL                        : 
+    alter table if exists trains 
+       add constraint FKqkipp9776vgttfkic1c9f94rs 
+       foreign key (source_station_id) 
+       references stations
+Hibernate: 
+    alter table if exists trains 
+       add constraint FKqkipp9776vgttfkic1c9f94rs 
+       foreign key (source_station_id) 
+       references stations
+2026-07-26T11:51:48.137+06:30  INFO 6399 --- [Myanmar_Railway_Booking_Backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-26T11:51:48.314+06:30  INFO 6399 --- [Myanmar_Railway_Booking_Backend] [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-07-26T11:51:48.674+06:30  WARN 6399 --- [Myanmar_Railway_Booking_Backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-26T11:51:48.683+06:30  WARN 6399 --- [Myanmar_Railway_Booking_Backend] [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 25badafc-6f62-41a0-883b-b42ed1d2fa66
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-07-26T11:51:48.697+06:30  INFO 6399 --- [Myanmar_Railway_Booking_Backend] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-07-26T11:51:48.888+06:30  INFO 6399 --- [Myanmar_Railway_Booking_Backend] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:mmr_railway_booking'
+2026-07-26T11:51:48.931+06:30  INFO 6399 --- [Myanmar_Railway_Booking_Backend] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-07-26T11:51:48.936+06:30  INFO 6399 --- [Myanmar_Railway_Booking_Backend] [           main] .t.b.MmrRailwayBookingBackendApplication : Started MmrRailwayBookingBackendApplication in 2.559 seconds (process running for 2.716)
+Myanmar Railway Booking Backend Started Successfully!
+Backend API running on: http://localhost:8080
+H2 Console: http://localhost:8080/h2-console
+JDBC URL: jdbc:h2:mem:mmr_railway_booking
+Username: sa
+Password: (empty)
+
+Available Endpoints:
+- GET  /api/health - Health check
+- GET  /api/info - API information
+- GET  /api/stations - List all stations
+- GET  /api/trains - List all trains
+- POST /api/trains/search - Search trains
+- POST /api/bookings - Create booking
+
+Frontend should connect to: http://localhost:8080/api
+2026-07-26T11:52:24.822+06:30  INFO 6399 --- [Myanmar_Railway_Booking_Backend] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-07-26T11:52:24.822+06:30  INFO 6399 --- [Myanmar_Railway_Booking_Backend] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-07-26T11:52:24.827+06:30  INFO 6399 --- [Myanmar_Railway_Booking_Backend] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  20:39 min
+[INFO] Finished at: 2026-07-26T12:12:24+06:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:3.4.3:run (default-cli) on project MMR_Railway_Booking_Backend: Process terminated with exit code: 137 -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
