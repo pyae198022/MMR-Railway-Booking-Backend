@@ -1,33 +1,50 @@
 package com.ticket.booking.config;
 
-import com.ticket.booking.model.Route;
-import com.ticket.booking.model.Station;
-import com.ticket.booking.model.Train;
-import com.ticket.booking.repository.RouteRepository;
-import com.ticket.booking.repository.StationRepository;
-import com.ticket.booking.repository.TrainRepository;
+import com.ticket.booking.model.*;
+import com.ticket.booking.repository.*;
 import com.ticket.booking.service.MockRouteService;
+import com.ticket.booking.service.RouteStopService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 @Configuration
 public class SimpleDataLoader {
     
     @Bean
     public CommandLineRunner loadData(StationRepository stationRepository, TrainRepository trainRepository,
-                                     RouteRepository routeRepository, MockRouteService mockRouteService) {
+                                     RouteRepository routeRepository, RouteStopRepository routeStopRepository,
+                                     MockRouteService mockRouteService, RouteStopService routeStopService) {
         return args -> {
             System.out.println("\n================================================");
             System.out.println(" Myanmar Railway Booking Backend Initializing...");
             System.out.println("================================================\n");
             
-            // Clear existing data
+            // Clear existing data in correct order (reverse of dependencies)
+            System.out.println("🧹 Clearing existing data...");
+            
+            // 1. Delete RouteStops first (depends on Routes and Stations)
+            if (routeStopRepository != null) {
+                routeStopRepository.deleteAll();
+                System.out.println("  • RouteStops cleared");
+            }
+            
+            // 2. Delete Routes (depends on Stations)
+            routeRepository.deleteAll();
+            System.out.println("  • Routes cleared");
+            
+            // 3. Delete Trains (depends on Stations)
             trainRepository.deleteAll();
+            System.out.println("  • Trains cleared");
+            
+            // 4. Delete Stations (no dependencies)
             stationRepository.deleteAll();
+            System.out.println("  • Stations cleared");
             
             // Load Myanmar Railway Stations (based on ort.railways.gov.mm)
             List<Station> stations = Arrays.asList(
@@ -173,9 +190,6 @@ public class SimpleDataLoader {
             // Create sample routes for Myanmar Railways
             System.out.println("\n📡 Creating Myanmar Railway Routes...");
             
-            // Clear existing routes first
-            routeRepository.deleteAll();
-            
             // Create routes between major stations
             List<Route> routes = Arrays.asList(
                 // Yangon to Naypyitaw (Very important route!)
@@ -238,6 +252,109 @@ public class SimpleDataLoader {
             routeRepository.saveAll(routes);
             System.out.println("✅ Created " + routes.size() + " Myanmar Railway Routes");
             
+            // Create route stops for each route
+            System.out.println("\n📍 Creating Route Stops...");
+            
+            // Define stop configurations for each route
+            Map<String, List<String>> routeStopConfigs = new HashMap<>();
+            
+            // Yangon-Naypyitaw stops
+            routeStopConfigs.put("YGN-NPT-001", Arrays.asList("YGN", "BGN", "PYA", "TGO", "NPT"));
+            
+            // Yangon-Mandalay stops
+            routeStopConfigs.put("YGN-MDY-001", Arrays.asList("YGN", "BGN", "PYA", "TGO", "NPT", "THT", "MDY"));
+            
+            // Yangon-Mawlamyine stops
+            routeStopConfigs.put("YGN-MAW-001", Arrays.asList("YGN", "BGN", "KYT", "MAW"));
+            
+            // Mandalay-Bago stops
+            routeStopConfigs.put("MDY-BGN-001", Arrays.asList("MDY", "THT", "NPT", "TGO", "PYA", "BGN"));
+            
+            // Mandalay-Myitkyina stops
+            routeStopConfigs.put("MDY-MYK-001", Arrays.asList("MDY", "SAG", "MNY", "KLA", "MYK"));
+            
+            // Naypyitaw-Mandalay stops
+            routeStopConfigs.put("NPT-MDY-001", Arrays.asList("NPT", "THT", "MDY"));
+            
+            // Bago-Pyay stops
+            routeStopConfigs.put("BGN-PYA-001", Arrays.asList("BGN", "PYA"));
+            
+            // Yangon-Pyin Oo Lwin stops
+            routeStopConfigs.put("YGN-PHU-001", Arrays.asList("YGN", "BGN", "PYA", "TGO", "NPT", "THT", "MDY", "KYT", "PHU"));
+            
+            int totalStopsCreated = 0;
+            
+            for (Route route : routes) {
+                List<String> stopCodes = routeStopConfigs.get(route.getRouteCode());
+                if (stopCodes != null) {
+                    // Find stations by code
+                    Map<String, Station> stationByCode = new HashMap<>();
+                    for (String code : stopCodes) {
+                        stationRepository.findByCode(code).ifPresent(station -> stationByCode.put(code, station));
+                    }
+                    
+                    // Create stops in order
+                    int order = 1;
+                    int accumulatedDistance = 0;
+                    int accumulatedTime = 0;
+                    double accumulatedFare = 0.0;
+                    int totalDistance = route.getDistanceKm();
+                    int totalTime = route.getEstimatedTravelTime();
+                    double totalFare = route.getBaseFare();
+                    
+                    for (String code : stopCodes) {
+                        Station station = stationByCode.get(code);
+                        if (station != null) {
+                            RouteStop routeStop = new RouteStop();
+                            routeStop.setRoute(route);
+                            routeStop.setStation(station);
+                            routeStop.setStopOrder(order);
+                            
+                            // Calculate proportional distance, time, and fare
+                            double proportion = (double) order / stopCodes.size();
+                            routeStop.setDistanceFromStart((int) (totalDistance * proportion));
+                            routeStop.setEstimatedArrivalOffset((int) (totalTime * proportion));
+                            
+                            // Stop duration: 5-15 minutes for intermediate stops, 0 for start/end
+                            int stopDuration = (order > 1 && order < stopCodes.size()) ? 5 + (order % 10) : 0;
+                            routeStop.setStopDuration(stopDuration);
+                            routeStop.setEstimatedDepartureOffset((int) (totalTime * proportion) + stopDuration);
+                            
+                            // Platform number
+                            routeStop.setPlatformNumber(String.valueOf((order % 3) + 1));
+                            
+                            // Stop type
+                            if (order == 1 || order == stopCodes.size()) {
+                                routeStop.setStopType("TERMINAL");
+                                routeStop.setIsIntermediateStop(false);
+                            } else if (order == 2 || order == stopCodes.size() - 1) {
+                                routeStop.setStopType("MAJOR");
+                                routeStop.setIsIntermediateStop(true);
+                            } else {
+                                routeStop.setStopType("REGULAR");
+                                routeStop.setIsIntermediateStop(true);
+                            }
+                            
+                            // Facilities
+                            routeStop.setFacilitiesAvailable(station.getFacilities());
+                            routeStop.setStatus("ACTIVE");
+                            
+                            // Calculate fare from start
+                            routeStop.setStopFareFromStart(totalFare * proportion);
+                            
+                            routeStopRepository.save(routeStop);
+                            totalStopsCreated++;
+                            
+                            order++;
+                        }
+                    }
+                    
+                    System.out.println("  • " + route.getRouteCode() + ": " + stopCodes.size() + " stops created");
+                }
+            }
+            
+            System.out.println("✅ Created " + totalStopsCreated + " Route Stops");
+            
             System.out.println("\n================================================");
             System.out.println(" Data Initialization Complete!");
             System.out.println("================================================\n");
@@ -251,6 +368,7 @@ public class SimpleDataLoader {
             System.out.println("- Stations: " + stationRepository.count());
             System.out.println("- Trains: " + trainRepository.count());
             System.out.println("- Routes: " + routeRepository.count());
+            System.out.println("- Route Stops: " + routeStopRepository.count());
             System.out.println("\nAvailable Endpoints:");
             System.out.println("- GET  /api/health - Health check");
             System.out.println("- GET  /api/info - API information");
