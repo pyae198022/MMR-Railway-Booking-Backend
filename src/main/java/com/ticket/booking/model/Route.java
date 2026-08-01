@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "routes")
 @Data
@@ -47,4 +50,45 @@ public class Route {
     
     @Column(nullable = false)
     private Double baseFare; // Base fare for this route
+    
+    @OneToMany(mappedBy = "route", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<RouteStop> stops = new ArrayList<>();
+    
+    // Helper methods
+    public int getTotalStops() {
+        return stops != null ? stops.size() : 0;
+    }
+    
+    public List<Station> getAllStations() {
+        List<Station> stations = new ArrayList<>();
+        if (stops != null) {
+            for (RouteStop stop : stops) {
+                stations.add(stop.getStation());
+            }
+        }
+        return stations;
+    }
+    
+    public RouteStop getStopByOrder(int order) {
+        if (stops != null) {
+            for (RouteStop stop : stops) {
+                if (stop.getStopOrder() == order) {
+                    return stop;
+                }
+            }
+        }
+        return null;
+    }
+    
+    public List<RouteStop> getIntermediateStops() {
+        List<RouteStop> intermediateStops = new ArrayList<>();
+        if (stops != null) {
+            for (RouteStop stop : stops) {
+                if (stop.getIsIntermediateStop() != null && stop.getIsIntermediateStop()) {
+                    intermediateStops.add(stop);
+                }
+            }
+        }
+        return intermediateStops;
+    }
 }

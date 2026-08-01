@@ -183,56 +183,56 @@ public class SimpleDataLoader {
                     stations.get(0), stations.get(8), // YGN to NPT
                     320, 240, "Main", 
                     "Primary route connecting commercial capital to administrative capital",
-                    "ACTIVE", 8000.0),
+                    "ACTIVE", 8000.0, null),
                 
                 // Yangon to Mandalay
                 new Route(null, "YGN-MDY-001", "Yangon-Mandalay Main Line",
                     stations.get(0), stations.get(5), // YGN to MDY
                     620, 630, "Main",
                     "Major north-south corridor connecting two largest cities",
-                    "ACTIVE", 15000.0),
+                    "ACTIVE", 15000.0, null),
                 
                 // Yangon to Mawlamyine
                 new Route(null, "YGN-MAW-001", "Yangon-Mawlamyine Coastal Line",
                     stations.get(0), stations.get(18), // YGN to MAW
                     300, 450, "Coastal",
                     "Scenic coastal route to Mon State capital",
-                    "ACTIVE", 12000.0),
+                    "ACTIVE", 12000.0, null),
                 
                 // Mandalay to Bago
                 new Route(null, "MDY-BGN-001", "Mandalay-Bago Central Line",
                     stations.get(5), stations.get(2), // MDY to BGN
                     520, 780, "Main",
                     "Central Myanmar route connecting ancient capitals",
-                    "ACTIVE", 10000.0),
+                    "ACTIVE", 10000.0, null),
                 
                 // Mandalay to Myitkyina
                 new Route(null, "MDY-MYK-001", "Mandalay-Myitkyina Northern Line",
                     stations.get(5), stations.get(16), // MDY to MYK
                     780, 750, "Northern",
                     "Northern route to Kachin State capital",
-                    "ACTIVE", 18000.0),
+                    "ACTIVE", 18000.0, null),
                 
                 // Naypyitaw to Mandalay
                 new Route(null, "NPT-MDY-001", "Naypyitaw-Mandalay Central Line",
                     stations.get(8), stations.get(5), // NPT to MDY
                     320, 270, "Main",
                     "Connecting administrative capital to cultural capital",
-                    "ACTIVE", 9000.0),
+                    "ACTIVE", 9000.0, null),
                 
                 // Bago to Pyay
                 new Route(null, "BGN-PYA-001", "Bago-Pyay Western Line",
                     stations.get(2), stations.get(3), // BGN to PYA
                     180, 270, "Regional",
                     "Western regional route in Bago Region",
-                    "ACTIVE", 5000.0),
+                    "ACTIVE", 5000.0, null),
                 
                 // Yangon to Pyin Oo Lwin
                 new Route(null, "YGN-PHU-001", "Yangon-Pyin Oo Lwin Scenic Route",
                     stations.get(0), stations.get(12), // YGN to PHU
                     690, 750, "Scenic",
                     "Beautiful hill station route with scenic views",
-                    "ACTIVE", 25000.0)
+                    "ACTIVE", 25000.0, null)
             );
             
             routeRepository.saveAll(routes);
