@@ -33,6 +33,15 @@ public class MockRouteController {
     }
     
     /**
+     * Get popular routes with exactly 5 trains for each route
+     */
+    @GetMapping("/routes/popular-with-trains")
+    public ResponseEntity<List<Map<String, Object>>> getPopularRoutesWithTrains() {
+        List<Map<String, Object>> popularRoutesWithTrains = mockRouteService.getPopularRoutesWithTrains();
+        return ResponseEntity.ok(popularRoutesWithTrains);
+    }
+    
+    /**
      * Search for routes between cities with mock data
      */
     @PostMapping("/routes/search")

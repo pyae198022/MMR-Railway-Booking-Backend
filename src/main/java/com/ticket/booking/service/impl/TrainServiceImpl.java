@@ -9,6 +9,7 @@ import com.ticket.booking.model.Train;
 import com.ticket.booking.repository.StationRepository;
 import com.ticket.booking.repository.TrainRepository;
 import com.ticket.booking.service.TrainService;
+import com.ticket.booking.service.MockRouteService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.time.Duration;
@@ -22,6 +23,7 @@ public class TrainServiceImpl implements TrainService {
     
     private final TrainRepository trainRepository;
     private final StationRepository stationRepository;
+    private final MockRouteService mockRouteService;
     
     @Override
     public TrainDTO createTrain(TrainDTO trainDTO) {
@@ -113,7 +115,32 @@ public class TrainServiceImpl implements TrainService {
             nextDay
         );
         
-        return trains.stream()
+        // If we don't have enough trains, use mock service to generate exactly 5 trains
+        if (trains.size() < 5) {
+            // Find stations for the cities
+            List<Station> sourceStations = stationRepository.findByCity(searchRequest.getSourceCity());
+            List<Station> destStations = stationRepository.findByCity(searchRequest.getDestinationCity());
+            
+            if (!sourceStations.isEmpty() && !destStations.isEmpty()) {
+                Station sourceStation = sourceStations.get(0);
+                Station destStation = destStations.get(0);
+                
+                // Generate mock trains
+                List<Train> mockTrains = mockRouteService.generateMockRoutes(sourceStation, destStation, journeyDate);
+                
+                // Add mock trains to reach exactly 5 trains total
+                int trainsNeeded = 5 - trains.size();
+                for (int i = 0; i < Math.min(trainsNeeded, mockTrains.size()); i++) {
+                    trains.add(mockTrains.get(i));
+                }
+            }
+        }
+        
+        // Ensure we have at least 5 trains (if possible)
+        // If we have more than 5, limit to first 5 for consistency
+        List<Train> finalTrains = trains.size() > 5 ? trains.subList(0, 5) : trains;
+        
+        return finalTrains.stream()
             .map(train -> {
                 TrainSearchResponse response = new TrainSearchResponse();
                 response.setTrain(mapToDTO(train));

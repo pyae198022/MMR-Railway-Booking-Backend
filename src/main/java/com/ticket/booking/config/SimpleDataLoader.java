@@ -51,24 +51,31 @@ public class SimpleDataLoader {
                 // Yangon Region Stations
                 new Station(null, "YGN", "Yangon Central Railway Station", "Yangon", "Yangon", "8", "Ticketing, Waiting Hall, Food Court, Restrooms, Parking, CCTV"),
                 new Station(null, "INS", "Insein Railway Station", "Yangon", "Yangon", "3", "Ticketing, Waiting Area, Restrooms"),
-                new Station(null, "BGN", "Bago Railway Station", "Bago", "Bago", "3", "Ticketing, Waiting Hall, Restrooms"),
-                new Station(null, "PYA", "Pyay Railway Station", "Pyay", "Bago", "3", "Ticketing, Waiting Area"),
-                new Station(null, "TGO", "Taungoo Railway Station", "Taungoo", "Bago", "2", "Basic Facilities"),
-                new Station(null, "MDY", "Mandalay Railway Station", "Mandalay", "Mandalay", "6", "Ticketing, Waiting Hall, Food Stalls, Restrooms, Parking"),
-                new Station(null, "SAG", "Sagaing Railway Station", "Sagaing", "Sagaing", "3", "Ticketing, Waiting Area"),
-                new Station(null, "MNY", "Monywa Railway Station", "Monywa", "Sagaing", "3", "Ticketing, Waiting Area"),
-                new Station(null, "NPT", "Naypyitaw Railway Station", "Naypyitaw", "Naypyitaw", "4", "Ticketing, Modern Waiting Hall, Restrooms, Parking"),
-                new Station(null, "THT", "Thazi Railway Station", "Thazi", "Mandalay", "4", "Ticketing, Junction Station, Restrooms"),
-                new Station(null, "SHW", "Shwenyaung Railway Station", "Shwenyaung", "Shan State", "2", "Basic Facilities"),
-                new Station(null, "HTY", "Htaukkyant Railway Station", "Htaukkyant", "Yangon", "2", "Basic Facilities"),
-                new Station(null, "PHU", "Pyin Oo Lwin Railway Station", "Pyin Oo Lwin", "Mandalay", "3", "Ticketing, Scenic Station, Restrooms"),
-                new Station(null, "LSK", "Lashio Railway Station", "Lashio", "Shan State", "3", "Ticketing, Waiting Area"),
-                new Station(null, "KYT", "Kyaukse Railway Station", "Kyaukse", "Mandalay", "2", "Basic Facilities"),
-                new Station(null, "KLA", "Kalay Railway Station", "Kalay", "Sagaing", "3", "Ticketing, Waiting Area"),
-                new Station(null, "MYK", "Myitkyina Railway Station", "Myitkyina", "Kachin State", "4", "Ticketing, Waiting Hall, Restrooms"),
-                new Station(null, "HPA", "Hpa-An Railway Station", "Hpa-An", "Kayin State", "2", "Basic Facilities"),
-                new Station(null, "MAW", "Mawlamyine Railway Station", "Mawlamyine", "Mon State", "4", "Ticketing, Waiting Hall, Restrooms"),
-                new Station(null, "TNY", "Taunggyi Railway Station", "Taunggyi", "Shan State", "3", "Ticketing, Waiting Area")
+                new Station(null, "BGN", "Bago Railway Station", "Bago", "Bago", "3", "Ticketing, Waiting Hall, Restrooms"),   // idx 2
+                new Station(null, "PYA", "Pyay Railway Station", "Pyay", "Bago", "3", "Ticketing, Waiting Area"),              // idx 3
+                new Station(null, "TGO", "Taungoo Railway Station", "Taungoo", "Bago", "2", "Basic Facilities"),              // idx 4
+                new Station(null, "MDY", "Mandalay Railway Station", "Mandalay", "Mandalay", "6", "Ticketing, Waiting Hall, Food Stalls, Restrooms, Parking"), // idx 5
+                new Station(null, "SAG", "Sagaing Railway Station", "Sagaing", "Sagaing", "3", "Ticketing, Waiting Area"),     // idx 6
+                new Station(null, "MNY", "Monywa Railway Station", "Monywa", "Sagaing", "3", "Ticketing, Waiting Area"),      // idx 7
+                new Station(null, "NPT", "Naypyitaw Railway Station", "Naypyitaw", "Naypyitaw", "4", "Ticketing, Modern Waiting Hall, Restrooms, Parking"), // idx 8
+                new Station(null, "THZ", "Thazi Railway Junction", "Thazi", "Mandalay", "4", "Ticketing, Junction Station, Restrooms, Transfer Point"),      // idx 9
+                new Station(null, "SHW", "Shwenyaung Railway Station", "Shwenyaung", "Shan State", "2", "Basic Facilities"),  // idx 10
+                new Station(null, "HTY", "Htaukkyant Railway Station", "Htaukkyant", "Yangon", "2", "Basic Facilities"),      // idx 11
+                new Station(null, "PHU", "Pyin Oo Lwin Railway Station", "Pyin Oo Lwin", "Mandalay", "3", "Ticketing, Scenic Station, Restrooms"), // idx 12
+                new Station(null, "LSK", "Lashio Railway Station", "Lashio", "Shan State", "3", "Ticketing, Waiting Area"),   // idx 13
+                new Station(null, "KYT", "Kyaukse Railway Station", "Kyaukse", "Mandalay", "2", "Basic Facilities"),          // idx 14
+                new Station(null, "KLA", "Kalay Railway Station", "Kalay", "Sagaing", "3", "Ticketing, Waiting Area"),        // idx 15
+                new Station(null, "MYK", "Myitkyina Railway Station", "Myitkyina", "Kachin State", "4", "Ticketing, Waiting Hall, Restrooms"), // idx 16
+                new Station(null, "HPA", "Hpa-An Railway Station", "Hpa-An", "Kayin State", "2", "Basic Facilities"),         // idx 17
+                new Station(null, "MAW", "Mawlamyine Railway Station", "Mawlamyine", "Mon State", "4", "Ticketing, Waiting Hall, Restrooms"),  // idx 18
+                new Station(null, "TNY", "Taunggyi Railway Station", "Taunggyi", "Shan State", "3", "Ticketing, Waiting Area"),// idx 19
+                // Additional stations for expanded routes
+                new Station(null, "KLW", "Kalaw Railway Station", "Kalaw", "Shan State", "2", "Ticketing, Hill Station, Scenic Views, Cool Climate"), // idx 20
+                new Station(null, "BGP", "Bagan Railway Station", "Bagan", "Mandalay", "2", "Ticketing, Tourist Station, Temple Views"),              // idx 21
+                new Station(null, "SWB", "Shwebo Railway Station", "Shwebo", "Sagaing", "3", "Ticketing, Waiting Area"),                              // idx 22
+                new Station(null, "MEK", "Meiktila Railway Station", "Meiktila", "Mandalay", "3", "Ticketing, Junction, Waiting Area"),               // idx 23
+                new Station(null, "DAW", "Dawei Railway Station", "Dawei", "Tanintharyi", "2", "Basic Facilities"),                                   // idx 24
+                new Station(null, "PTH", "Pathein Railway Station", "Pathein", "Ayeyarwady", "3", "Ticketing, Waiting Area")                          // idx 25
             );
             
             stationRepository.saveAll(stations);
@@ -87,7 +94,7 @@ public class SimpleDataLoader {
             train1.setBasePrice(15000.0);
             train1.setTrainType("Express");
             train1.setStatus("ACTIVE");
-            
+
             Train train2 = new Train();
             train2.setTrainNumber("TR-002");
             train2.setTrainName("Yangon-Naypyitaw Special");
@@ -100,12 +107,12 @@ public class SimpleDataLoader {
             train2.setBasePrice(8000.0);
             train2.setTrainType("Special");
             train2.setStatus("ACTIVE");
-            
+
             Train train3 = new Train();
             train3.setTrainNumber("TR-003");
             train3.setTrainName("Mandalay-Bago Local");
-            train3.setSourceStation(stations.get(5)); // Mandalay
-            train3.setDestinationStation(stations.get(2)); // Bago
+            train3.setSourceStation(stations.get(5)); // Mandalay (idx 5)
+            train3.setDestinationStation(stations.get(2)); // Bago (idx 2)
             train3.setDepartureTime(LocalDateTime.now().plusDays(2).withHour(6).withMinute(0));
             train3.setArrivalTime(LocalDateTime.now().plusDays(2).withHour(19).withMinute(0));
             train3.setTotalSeats(150);
@@ -113,12 +120,12 @@ public class SimpleDataLoader {
             train3.setBasePrice(10000.0);
             train3.setTrainType("Local");
             train3.setStatus("ACTIVE");
-            
+
             Train train4 = new Train();
             train4.setTrainNumber("TR-004");
             train4.setTrainName("Yangon-Mawlamyine Express");
             train4.setSourceStation(stations.get(0)); // Yangon
-            train4.setDestinationStation(stations.get(18)); // Mawlamyine
+            train4.setDestinationStation(stations.get(18)); // Mawlamyine (idx 18)
             train4.setDepartureTime(LocalDateTime.now().plusDays(1).withHour(8).withMinute(0));
             train4.setArrivalTime(LocalDateTime.now().plusDays(1).withHour(15).withMinute(30));
             train4.setTotalSeats(180);
@@ -126,12 +133,12 @@ public class SimpleDataLoader {
             train4.setBasePrice(12000.0);
             train4.setTrainType("Express");
             train4.setStatus("ACTIVE");
-            
+
             Train train5 = new Train();
             train5.setTrainNumber("TR-005");
             train5.setTrainName("Mandalay-Myitkyina Special");
-            train5.setSourceStation(stations.get(5)); // Mandalay
-            train5.setDestinationStation(stations.get(16)); // Myitkyina
+            train5.setSourceStation(stations.get(5)); // Mandalay (idx 5)
+            train5.setDestinationStation(stations.get(16)); // Myitkyina (idx 16)
             train5.setDepartureTime(LocalDateTime.now().plusDays(2).withHour(7).withMinute(30));
             train5.setArrivalTime(LocalDateTime.now().plusDays(2).withHour(20).withMinute(0));
             train5.setTotalSeats(160);
@@ -139,17 +146,17 @@ public class SimpleDataLoader {
             train5.setBasePrice(18000.0);
             train5.setTrainType("Special");
             train5.setStatus("ACTIVE");
-            
+
             List<Train> trains = Arrays.asList(train1, train2, train3, train4, train5);
             trainRepository.saveAll(trains);
             System.out.println("✅ Loaded " + trains.size() + " Myanmar Railway Trains");
-            
+
             // Create more trains for different routes
             Train train6 = new Train();
             train6.setTrainNumber("TR-006");
             train6.setTrainName("Naypyitaw-Mandalay Express");
-            train6.setSourceStation(stations.get(8)); // Naypyitaw
-            train6.setDestinationStation(stations.get(5)); // Mandalay
+            train6.setSourceStation(stations.get(8)); // Naypyitaw (idx 8)
+            train6.setDestinationStation(stations.get(5)); // Mandalay (idx 5)
             train6.setDepartureTime(LocalDateTime.now().plusDays(2).withHour(14).withMinute(0));
             train6.setArrivalTime(LocalDateTime.now().plusDays(2).withHour(18).withMinute(30));
             train6.setTotalSeats(200);
@@ -157,12 +164,12 @@ public class SimpleDataLoader {
             train6.setBasePrice(9000.0);
             train6.setTrainType("Express");
             train6.setStatus("ACTIVE");
-            
+
             Train train7 = new Train();
             train7.setTrainNumber("TR-007");
             train7.setTrainName("Yangon-Pyin Oo Lwin Scenic");
             train7.setSourceStation(stations.get(0)); // Yangon
-            train7.setDestinationStation(stations.get(12)); // Pyin Oo Lwin
+            train7.setDestinationStation(stations.get(12)); // Pyin Oo Lwin (idx 12)
             train7.setDepartureTime(LocalDateTime.now().plusDays(3).withHour(6).withMinute(30));
             train7.setArrivalTime(LocalDateTime.now().plusDays(3).withHour(19).withMinute(0));
             train7.setTotalSeats(120);
@@ -170,12 +177,12 @@ public class SimpleDataLoader {
             train7.setBasePrice(25000.0);
             train7.setTrainType("Scenic");
             train7.setStatus("ACTIVE");
-            
+
             Train train8 = new Train();
             train8.setTrainNumber("TR-008");
             train8.setTrainName("Bago-Pyay Local");
-            train8.setSourceStation(stations.get(2)); // Bago
-            train8.setDestinationStation(stations.get(3)); // Pyay
+            train8.setSourceStation(stations.get(2)); // Bago (idx 2)
+            train8.setDestinationStation(stations.get(3)); // Pyay (idx 3)
             train8.setDepartureTime(LocalDateTime.now().plusDays(1).withHour(10).withMinute(0));
             train8.setArrivalTime(LocalDateTime.now().plusDays(1).withHour(14).withMinute(30));
             train8.setTotalSeats(100);
@@ -183,9 +190,78 @@ public class SimpleDataLoader {
             train8.setBasePrice(5000.0);
             train8.setTrainType("Local");
             train8.setStatus("ACTIVE");
-            
+
             trainRepository.saveAll(Arrays.asList(train6, train7, train8));
             System.out.println("✅ Added 3 more trains for popular routes");
+
+            // DEMU and other additional train types
+            Train trainDEMU1 = new Train();
+            trainDEMU1.setTrainNumber("UP-93");
+            trainDEMU1.setTrainName("Yangon-Bago DEMU");
+            trainDEMU1.setSourceStation(stations.get(0)); // Yangon
+            trainDEMU1.setDestinationStation(stations.get(2)); // Bago (idx 2)
+            trainDEMU1.setDepartureTime(LocalDateTime.now().plusDays(1).withHour(6).withMinute(0));
+            trainDEMU1.setArrivalTime(LocalDateTime.now().plusDays(1).withHour(8).withMinute(30));
+            trainDEMU1.setTotalSeats(200);
+            trainDEMU1.setAvailableSeats(180);
+            trainDEMU1.setBasePrice(3500.0);
+            trainDEMU1.setTrainType("DEMU");
+            trainDEMU1.setStatus("ACTIVE");
+
+            Train trainDEMU2 = new Train();
+            trainDEMU2.setTrainNumber("UP-95");
+            trainDEMU2.setTrainName("Naypyitaw-Mandalay DEMU");
+            trainDEMU2.setSourceStation(stations.get(8)); // Naypyitaw (idx 8)
+            trainDEMU2.setDestinationStation(stations.get(5)); // Mandalay (idx 5)
+            trainDEMU2.setDepartureTime(LocalDateTime.now().plusDays(1).withHour(8).withMinute(0));
+            trainDEMU2.setArrivalTime(LocalDateTime.now().plusDays(1).withHour(11).withMinute(0));
+            trainDEMU2.setTotalSeats(200);
+            trainDEMU2.setAvailableSeats(150);
+            trainDEMU2.setBasePrice(6500.0);
+            trainDEMU2.setTrainType("DEMU");
+            trainDEMU2.setStatus("ACTIVE");
+
+            Train trainNight = new Train();
+            trainNight.setTrainNumber("UP-111");
+            trainNight.setTrainName("Night Express (Yangon-Mandalay)");
+            trainNight.setSourceStation(stations.get(0)); // Yangon
+            trainNight.setDestinationStation(stations.get(5)); // Mandalay (idx 5)
+            trainNight.setDepartureTime(LocalDateTime.now().plusDays(1).withHour(21).withMinute(0));
+            trainNight.setArrivalTime(LocalDateTime.now().plusDays(2).withHour(7).withMinute(30));
+            trainNight.setTotalSeats(280);
+            trainNight.setAvailableSeats(240);
+            trainNight.setBasePrice(18000.0);
+            trainNight.setTrainType("Night");
+            trainNight.setStatus("ACTIVE");
+
+            Train trainMail = new Train();
+            trainMail.setTrainNumber("UP-35");
+            trainMail.setTrainName("Lashio Mail");
+            trainMail.setSourceStation(stations.get(5)); // Mandalay (idx 5)
+            trainMail.setDestinationStation(stations.get(13)); // Lashio (idx 13)
+            trainMail.setDepartureTime(LocalDateTime.now().plusDays(1).withHour(6).withMinute(0));
+            trainMail.setArrivalTime(LocalDateTime.now().plusDays(1).withHour(14).withMinute(0));
+            trainMail.setTotalSeats(180);
+            trainMail.setAvailableSeats(160);
+            trainMail.setBasePrice(8500.0);
+            trainMail.setTrainType("Mail");
+            trainMail.setStatus("ACTIVE");
+
+            Train trainOrdinary = new Train();
+            trainOrdinary.setTrainNumber("UP-61");
+            trainOrdinary.setTrainName("Pyay Ordinary");
+            trainOrdinary.setSourceStation(stations.get(2)); // Bago (idx 2)
+            trainOrdinary.setDestinationStation(stations.get(3)); // Pyay (idx 3)
+            trainOrdinary.setDepartureTime(LocalDateTime.now().plusDays(1).withHour(7).withMinute(0));
+            trainOrdinary.setArrivalTime(LocalDateTime.now().plusDays(1).withHour(12).withMinute(0));
+            trainOrdinary.setTotalSeats(250);
+            trainOrdinary.setAvailableSeats(200);
+            trainOrdinary.setBasePrice(4000.0);
+            trainOrdinary.setTrainType("Ordinary");
+            trainOrdinary.setStatus("ACTIVE");
+
+            trainRepository.saveAll(Arrays.asList(trainDEMU1, trainDEMU2, trainNight, trainMail, trainOrdinary));
+            System.out.println("✅ Added DEMU, Night, Mail, and Ordinary trains");
             
             // Create sample routes for Myanmar Railways
             System.out.println("\n📡 Creating Myanmar Railway Routes...");
@@ -260,27 +336,27 @@ public class SimpleDataLoader {
             
             // Yangon-Naypyitaw stops
             routeStopConfigs.put("YGN-NPT-001", Arrays.asList("YGN", "BGN", "PYA", "TGO", "NPT"));
-            
+
             // Yangon-Mandalay stops
-            routeStopConfigs.put("YGN-MDY-001", Arrays.asList("YGN", "BGN", "PYA", "TGO", "NPT", "THT", "MDY"));
-            
+            routeStopConfigs.put("YGN-MDY-001", Arrays.asList("YGN", "BGN", "PYA", "TGO", "NPT", "THZ", "MDY"));
+
             // Yangon-Mawlamyine stops
             routeStopConfigs.put("YGN-MAW-001", Arrays.asList("YGN", "BGN", "KYT", "MAW"));
-            
+
             // Mandalay-Bago stops
-            routeStopConfigs.put("MDY-BGN-001", Arrays.asList("MDY", "THT", "NPT", "TGO", "PYA", "BGN"));
-            
+            routeStopConfigs.put("MDY-BGN-001", Arrays.asList("MDY", "THZ", "NPT", "TGO", "PYA", "BGN"));
+
             // Mandalay-Myitkyina stops
             routeStopConfigs.put("MDY-MYK-001", Arrays.asList("MDY", "SAG", "MNY", "KLA", "MYK"));
-            
+
             // Naypyitaw-Mandalay stops
-            routeStopConfigs.put("NPT-MDY-001", Arrays.asList("NPT", "THT", "MDY"));
-            
+            routeStopConfigs.put("NPT-MDY-001", Arrays.asList("NPT", "THZ", "MDY"));
+
             // Bago-Pyay stops
             routeStopConfigs.put("BGN-PYA-001", Arrays.asList("BGN", "PYA"));
-            
+
             // Yangon-Pyin Oo Lwin stops
-            routeStopConfigs.put("YGN-PHU-001", Arrays.asList("YGN", "BGN", "PYA", "TGO", "NPT", "THT", "MDY", "KYT", "PHU"));
+            routeStopConfigs.put("YGN-PHU-001", Arrays.asList("YGN", "BGN", "PYA", "TGO", "NPT", "THZ", "MDY", "KYT", "PHU"));
             
             int totalStopsCreated = 0;
             

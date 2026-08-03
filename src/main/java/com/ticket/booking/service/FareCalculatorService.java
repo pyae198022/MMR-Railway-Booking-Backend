@@ -17,29 +17,120 @@ public class FareCalculatorService {
         // Initialize distance matrix with Myanmar Railways approximate distances
         Map<String, Integer> yangonDistances = new HashMap<>();
         yangonDistances.put("Bago", 80);
-        yangonDistances.put("Pyay", 180);
+        yangonDistances.put("Pyay", 260);
         yangonDistances.put("Taungoo", 250);
         yangonDistances.put("Naypyitaw", 320);
+        yangonDistances.put("Naypyidaw", 320);
         yangonDistances.put("Thazi", 450);
         yangonDistances.put("Mandalay", 620);
         yangonDistances.put("Mawlamyine", 300);
+        yangonDistances.put("Mawlamyaing", 300);
         yangonDistances.put("Pyin Oo Lwin", 700);
+        yangonDistances.put("Pyinoolwin", 700);
         yangonDistances.put("Myitkyina", 1450);
+        yangonDistances.put("Bagan", 700);
+        yangonDistances.put("Kalay", 1050);
+        yangonDistances.put("Lashio", 950);
+        yangonDistances.put("Taunggyi", 600);
+        yangonDistances.put("Kalaw", 580);
+        yangonDistances.put("Pathein", 190);
+        yangonDistances.put("Dawei", 620);
+        yangonDistances.put("Meiktila", 430);
         DISTANCE_MATRIX.put("Yangon", yangonDistances);
-        
+
         Map<String, Integer> mandalayDistances = new HashMap<>();
         mandalayDistances.put("Naypyitaw", 300);
+        mandalayDistances.put("Naypyidaw", 300);
         mandalayDistances.put("Pyin Oo Lwin", 70);
+        mandalayDistances.put("Pyinoolwin", 70);
         mandalayDistances.put("Lashio", 300);
         mandalayDistances.put("Myitkyina", 750);
         mandalayDistances.put("Kalay", 420);
+        mandalayDistances.put("Bagan", 190);
+        mandalayDistances.put("Thazi", 170);
+        mandalayDistances.put("Meiktila", 130);
+        mandalayDistances.put("Taunggyi", 280);
+        mandalayDistances.put("Kalaw", 260);
+        mandalayDistances.put("Shwebo", 110);
+        mandalayDistances.put("Sagaing", 20);
+        mandalayDistances.put("Monywa", 136);
         DISTANCE_MATRIX.put("Mandalay", mandalayDistances);
-        
+
         Map<String, Integer> naypyitawDistances = new HashMap<>();
         naypyitawDistances.put("Yangon", 320);
         naypyitawDistances.put("Mandalay", 300);
         naypyitawDistances.put("Bago", 240);
+        naypyitawDistances.put("Taungoo", 100);
+        naypyitawDistances.put("Thazi", 130);
+        naypyitawDistances.put("Meiktila", 130);
         DISTANCE_MATRIX.put("Naypyitaw", naypyitawDistances);
+        DISTANCE_MATRIX.put("Naypyidaw", naypyitawDistances);
+
+        Map<String, Integer> bagoDistances = new HashMap<>();
+        bagoDistances.put("Yangon", 80);
+        bagoDistances.put("Naypyitaw", 240);
+        bagoDistances.put("Pyay", 180);
+        bagoDistances.put("Taungoo", 170);
+        bagoDistances.put("Mawlamyine", 220);
+        DISTANCE_MATRIX.put("Bago", bagoDistances);
+
+        Map<String, Integer> thinkDistances = new HashMap<>();
+        thinkDistances.put("Mandalay", 170);
+        thinkDistances.put("Kalaw", 100);
+        thinkDistances.put("Taunggyi", 140);
+        thinkDistances.put("Meiktila", 40);
+        thinkDistances.put("Naypyitaw", 130);
+        DISTANCE_MATRIX.put("Thazi", thinkDistances);
+
+        Map<String, Integer> pyinoolwinDistances = new HashMap<>();
+        pyinoolwinDistances.put("Mandalay", 70);
+        pyinoolwinDistances.put("Lashio", 230);
+        pyinoolwinDistances.put("Yangon", 700);
+        DISTANCE_MATRIX.put("Pyin Oo Lwin", pyinoolwinDistances);
+        DISTANCE_MATRIX.put("Pyinoolwin", pyinoolwinDistances);
+
+        Map<String, Integer> lashioDistances = new HashMap<>();
+        lashioDistances.put("Mandalay", 300);
+        lashioDistances.put("Pyin Oo Lwin", 230);
+        lashioDistances.put("Pyinoolwin", 230);
+        DISTANCE_MATRIX.put("Lashio", lashioDistances);
+
+        Map<String, Integer> myitkyinaDistances = new HashMap<>();
+        myitkyinaDistances.put("Mandalay", 750);
+        myitkyinaDistances.put("Yangon", 1450);
+        myitkyinaDistances.put("Shwebo", 640);
+        DISTANCE_MATRIX.put("Myitkyina", myitkyinaDistances);
+
+        Map<String, Integer> mawlamyineDistances = new HashMap<>();
+        mawlamyineDistances.put("Yangon", 300);
+        mawlamyineDistances.put("Bago", 220);
+        mawlamyineDistances.put("Dawei", 320);
+        DISTANCE_MATRIX.put("Mawlamyine", mawlamyineDistances);
+        DISTANCE_MATRIX.put("Mawlamyaing", mawlamyineDistances);
+
+        Map<String, Integer> kaywDistances = new HashMap<>();
+        kaywDistances.put("Thazi", 100);
+        kaywDistances.put("Mandalay", 260);
+        kaywDistances.put("Taunggyi", 50);
+        DISTANCE_MATRIX.put("Kalaw", kaywDistances);
+
+        Map<String, Integer> taunggyiDistances = new HashMap<>();
+        taunggyiDistances.put("Thazi", 140);
+        taunggyiDistances.put("Mandalay", 280);
+        taunggyiDistances.put("Kalaw", 50);
+        taunggyiDistances.put("Yangon", 600);
+        DISTANCE_MATRIX.put("Taunggyi", taunggyiDistances);
+
+        Map<String, Integer> baganDistances = new HashMap<>();
+        baganDistances.put("Mandalay", 190);
+        baganDistances.put("Yangon", 700);
+        baganDistances.put("Pyay", 310);
+        DISTANCE_MATRIX.put("Bagan", baganDistances);
+
+        Map<String, Integer> kalayDistances = new HashMap<>();
+        kalayDistances.put("Mandalay", 420);
+        kalayDistances.put("Shwebo", 310);
+        DISTANCE_MATRIX.put("Kalay", kalayDistances);
     }
     
     /**
@@ -71,28 +162,37 @@ public class FareCalculatorService {
     }
     
     private int estimateDistance(String sourceCity, String destinationCity) {
-        // Simple estimation based on Myanmar geography
-        String[] cities = {"Yangon", "Mandalay", "Naypyitaw", "Bago", "Pyay", "Taungoo", 
-                          "Mawlamyine", "Pyin Oo Lwin", "Myitkyina", "Lashio", "Kalay"};
-        
-        // Approximate distances in Myanmar
+        // Approximate distances from Yangon for estimation
         Map<String, Integer> centralDistances = new HashMap<>();
         centralDistances.put("Yangon", 0);
         centralDistances.put("Mandalay", 620);
         centralDistances.put("Naypyitaw", 320);
+        centralDistances.put("Naypyidaw", 320);
         centralDistances.put("Bago", 80);
-        centralDistances.put("Pyay", 180);
+        centralDistances.put("Pyay", 260);
         centralDistances.put("Taungoo", 250);
         centralDistances.put("Mawlamyine", 300);
+        centralDistances.put("Mawlamyaing", 300);
         centralDistances.put("Pyin Oo Lwin", 700);
+        centralDistances.put("Pyinoolwin", 700);
         centralDistances.put("Myitkyina", 1450);
-        centralDistances.put("Lashio", 920);
-        centralDistances.put("Kalay", 1040);
-        
-        int sourceDist = centralDistances.getOrDefault(sourceCity, 0);
-        int destDist = centralDistances.getOrDefault(destinationCity, 0);
-        
-        return Math.abs(sourceDist - destDist);
+        centralDistances.put("Lashio", 950);
+        centralDistances.put("Kalay", 1050);
+        centralDistances.put("Thazi", 450);
+        centralDistances.put("Meiktila", 430);
+        centralDistances.put("Taunggyi", 600);
+        centralDistances.put("Kalaw", 580);
+        centralDistances.put("Bagan", 700);
+        centralDistances.put("Shwebo", 730);
+        centralDistances.put("Sagaing", 640);
+        centralDistances.put("Monywa", 756);
+        centralDistances.put("Pathein", 190);
+        centralDistances.put("Dawei", 620);
+
+        int sourceDist = centralDistances.getOrDefault(sourceCity, 300);
+        int destDist = centralDistances.getOrDefault(destinationCity, 300);
+
+        return Math.max(50, Math.abs(sourceDist - destDist));
     }
     
     /**
@@ -131,11 +231,25 @@ public class FareCalculatorService {
                 return 2.2;
             case "LOCAL":
                 return 1.0;
+            case "DEMU":            // Diesel Electric Multiple Unit
+                return 1.3;
+            case "ORDINARY":
+                return 0.9;
+            case "MAIL":
+                return 1.1;
+            case "MIXED":
+                return 0.85;
+            case "CIRCULAR":
+                return 1.0;
+            case "SUBURBAN":
+                return 1.0;
+            case "NIGHT":
+                return 1.6;
             default:
                 return 1.2; // Default for other types
         }
     }
-    
+
     private double getPerKmRate(String trainType) {
         switch (trainType.toUpperCase()) {
             case "EXPRESS":
@@ -146,6 +260,20 @@ public class FareCalculatorService {
                 return 35.0;
             case "LOCAL":
                 return 20.0;
+            case "DEMU":
+                return 22.0;
+            case "ORDINARY":
+                return 15.0;
+            case "MAIL":
+                return 18.0;
+            case "MIXED":
+                return 12.0;
+            case "CIRCULAR":
+                return 18.0;
+            case "SUBURBAN":
+                return 15.0;
+            case "NIGHT":
+                return 28.0;
             default:
                 return 22.0;
         }
